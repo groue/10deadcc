@@ -2,7 +2,11 @@ import GRDB
 
 struct AppDatabase {
     static func openDatabase(atPath path: String) throws -> DatabaseQueue {
-        let dbQueue = try DatabaseQueue(path: path)
+        var configuration = Configuration()
+        configuration.trace = {
+            print("SQL>", $0)
+        }
+        let dbQueue = try DatabaseQueue(path: path, configuration: configuration)
         try migrator.migrate(dbQueue)
         return dbQueue
     }

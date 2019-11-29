@@ -1,5 +1,6 @@
 import UIKit
 import GRDB
+import os.log
 
 // The shared database queue
 var dbQueue: DatabaseQueue!
@@ -13,9 +14,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        os_log("%@", #function)
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        os_log("%@", #function)
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        os_log("%@", #function)
+        let task = application.beginBackgroundTask {
+            os_log("%@", "end of background task")
+        }
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        os_log("%@", #function)
+    }
+    
     private func setupDatabase(_ application: UIApplication) throws {
-        let databaseURL = try FileManager.default
-            .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let databaseURL = FileManager.default
+            .containerURL(forSecurityApplicationGroupIdentifier: "group.com.github.groue.AppGroup")!
             .appendingPathComponent("db.sqlite")
         dbQueue = try AppDatabase.openDatabase(atPath: databaseURL.path)
         

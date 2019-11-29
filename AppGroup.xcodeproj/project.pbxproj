@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		560709DA2390558A001A9DE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560709D92390558A001A9DE7 /* AppDelegate.swift */; };
-		560709DC2390558A001A9DE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560709DB2390558A001A9DE7 /* SceneDelegate.swift */; };
 		560709DE2390558A001A9DE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560709DD2390558A001A9DE7 /* ViewController.swift */; };
 		560709E12390558A001A9DE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 560709DF2390558A001A9DE7 /* Main.storyboard */; };
 		560709E32390558C001A9DE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 560709E22390558C001A9DE7 /* Assets.xcassets */; };
@@ -21,7 +20,6 @@
 /* Begin PBXFileReference section */
 		560709D62390558A001A9DE7 /* AppGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		560709D92390558A001A9DE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		560709DB2390558A001A9DE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		560709DD2390558A001A9DE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		560709E02390558A001A9DE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		560709E22390558C001A9DE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 				560709E42390558C001A9DE7 /* LaunchScreen.storyboard */,
 				560709DF2390558A001A9DE7 /* Main.storyboard */,
 				560709F32390D883001A9DE7 /* Player.swift */,
-				560709DB2390558A001A9DE7 /* SceneDelegate.swift */,
 				560709DD2390558A001A9DE7 /* ViewController.swift */,
 			);
 			path = AppGroup;
@@ -158,7 +155,6 @@
 				560709DE2390558A001A9DE7 /* ViewController.swift in Sources */,
 				560709DA2390558A001A9DE7 /* AppDelegate.swift in Sources */,
 				560709F22390D85F001A9DE7 /* AppDatabase.swift in Sources */,
-				560709DC2390558A001A9DE7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

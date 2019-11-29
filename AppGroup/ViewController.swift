@@ -1,20 +1,25 @@
-//
-//  ViewController.swift
-//  AppGroup
-//
-//  Created by Gwendal Roué on 28/11/2019.
-//  Copyright © 2019 Gwendal Roué. All rights reserved.
-//
-
 import UIKit
+import GRDB
 
 class ViewController: UIViewController {
+    
+    @IBOutlet private var button: UIButton!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBAction func runTransaction() {
+        button.isEnabled = false
+        
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        DispatchQueue.global().async {
+            try! dbQueue.inTransaction(.immediate) { _ in
+                semaphore.wait()
+                return .commit
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(60)) {
+            semaphore.signal()
+            self.button.isEnabled = true
+        }
     }
-
-
 }
-
