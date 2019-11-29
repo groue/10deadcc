@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		560709E12390558A001A9DE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 560709DF2390558A001A9DE7 /* Main.storyboard */; };
 		560709E32390558C001A9DE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 560709E22390558C001A9DE7 /* Assets.xcassets */; };
 		560709E62390558C001A9DE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 560709E42390558C001A9DE7 /* LaunchScreen.storyboard */; };
+		560709F02390D7A8001A9DE7 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 560709EF2390D7A8001A9DE7 /* GRDB */; };
+		560709F22390D85F001A9DE7 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560709F12390D85F001A9DE7 /* AppDatabase.swift */; };
+		560709F42390D883001A9DE7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560709F32390D883001A9DE7 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		560709E22390558C001A9DE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		560709E52390558C001A9DE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		560709E72390558C001A9DE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		560709ED2390559A001A9DE7 /* AppGroup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppGroup.entitlements; sourceTree = "<group>"; };
+		560709F12390D85F001A9DE7 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		560709F32390D883001A9DE7 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				560709F02390D7A8001A9DE7 /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,13 +63,16 @@
 		560709D82390558A001A9DE7 /* AppGroup */ = {
 			isa = PBXGroup;
 			children = (
+				560709F12390D85F001A9DE7 /* AppDatabase.swift */,
 				560709D92390558A001A9DE7 /* AppDelegate.swift */,
+				560709ED2390559A001A9DE7 /* AppGroup.entitlements */,
+				560709E22390558C001A9DE7 /* Assets.xcassets */,
+				560709E72390558C001A9DE7 /* Info.plist */,
+				560709E42390558C001A9DE7 /* LaunchScreen.storyboard */,
+				560709DF2390558A001A9DE7 /* Main.storyboard */,
+				560709F32390D883001A9DE7 /* Player.swift */,
 				560709DB2390558A001A9DE7 /* SceneDelegate.swift */,
 				560709DD2390558A001A9DE7 /* ViewController.swift */,
-				560709DF2390558A001A9DE7 /* Main.storyboard */,
-				560709E22390558C001A9DE7 /* Assets.xcassets */,
-				560709E42390558C001A9DE7 /* LaunchScreen.storyboard */,
-				560709E72390558C001A9DE7 /* Info.plist */,
 			);
 			path = AppGroup;
 			sourceTree = "<group>";
@@ -83,6 +93,9 @@
 			dependencies = (
 			);
 			name = AppGroup;
+			packageProductDependencies = (
+				560709EF2390D7A8001A9DE7 /* GRDB */,
+			);
 			productName = AppGroup;
 			productReference = 560709D62390558A001A9DE7 /* AppGroup.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 560709CD2390558A001A9DE7;
+			packageReferences = (
+				560709EE2390D7A8001A9DE7 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
+			);
 			productRefGroup = 560709D72390558A001A9DE7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,8 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				560709F42390D883001A9DE7 /* Player.swift in Sources */,
 				560709DE2390558A001A9DE7 /* ViewController.swift in Sources */,
 				560709DA2390558A001A9DE7 /* AppDelegate.swift in Sources */,
+				560709F22390D85F001A9DE7 /* AppDatabase.swift in Sources */,
 				560709DC2390558A001A9DE7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +302,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppGroup/AppGroup.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AMD8W895CT;
 				INFOPLIST_FILE = AppGroup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,7 +321,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AppGroup/AppGroup.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AMD8W895CT;
 				INFOPLIST_FILE = AppGroup/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -336,6 +358,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		560709EE2390D7A8001A9DE7 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.6.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		560709EF2390D7A8001A9DE7 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 560709EE2390D7A8001A9DE7 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 560709CE2390558A001A9DE7 /* Project object */;
 }
