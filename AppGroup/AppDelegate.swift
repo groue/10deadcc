@@ -8,6 +8,12 @@ var dbQueue: DatabaseQueue!
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var timer: DispatchSourceTimer? {
+        didSet {
+            timer?.resume()
+            oldValue?.cancel()
+        }
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         try! setupDatabase(application)
@@ -24,8 +30,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidEnterBackground(_ application: UIApplication) {
         os_log("%@", #function)
-        let task = application.beginBackgroundTask {
+        _ = application.beginBackgroundTask {
             os_log("%@", "end of background task")
+            let startDate = Date()
+            let timer = DispatchSource.makeTimerSource(
+                flags: DispatchSource.TimerFlags(rawValue: 0),
+                queue: DispatchQueue.global(qos: .userInitiated))
+            timer.schedule(deadline: .now(), repeating: 0.1)
+            timer.setEventHandler {
+                ProcessInfo.processInfo.performExpiringActivity(withReason: "check") { suspended in
+                    DispatchQueue.main.async {
+                        os_log("%@", "suspended: \(suspended), \(Date().timeIntervalSince(startDate))")
+                        os_log("%@", "backgroundTimeRemaining: \(application.backgroundTimeRemaining)")
+                    }
+                }
+            }
+            self.timer = timer
         }
     }
     
