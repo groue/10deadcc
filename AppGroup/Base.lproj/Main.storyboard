@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,23 +16,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLv-iR-zmY">
-                                <rect key="frame" x="146" y="438" width="122" height="30"/>
-                                <state key="normal" title="Open Transaction"/>
-                                <connections>
-                                    <action selector="runTransaction" destination="BYZ-38-t0r" eventType="touchUpInside" id="aRi-vE-7gR"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wOb-US-w5O">
+                                <rect key="frame" x="140.5" y="379" width="133" height="148"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLv-iR-zmY">
+                                        <rect key="frame" x="7.5" y="0.0" width="118" height="44"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="13" maxX="0.0" maxY="13"/>
+                                        <state key="normal" title="Long Transaction"/>
+                                        <connections>
+                                            <action selector="runLongTransaction" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ui-dc-RzT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgi-y2-WUJ">
+                                        <rect key="frame" x="0.0" y="52" width="133" height="44"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="13" maxX="0.0" maxY="13"/>
+                                        <state key="normal" title="Queue: Long Query"/>
+                                        <connections>
+                                            <action selector="runLongQueryInDatabaseQueue" destination="BYZ-38-t0r" eventType="touchUpInside" id="9ph-DI-ndw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjv-Ru-1td">
+                                        <rect key="frame" x="7.5" y="104" width="118" height="44"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="13" maxX="0.0" maxY="13"/>
+                                        <state key="normal" title="Pool: Long Query"/>
+                                        <connections>
+                                            <action selector="runLongQueryInDatabasePool" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZFb-tg-faW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="DLv-iR-zmY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="CAI-sa-WST"/>
-                            <constraint firstItem="DLv-iR-zmY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jD1-bF-x1O"/>
+                            <constraint firstItem="wOb-US-w5O" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ZKU-ck-YBH"/>
+                            <constraint firstItem="wOb-US-w5O" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="uA0-2U-EWw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="button" destination="DLv-iR-zmY" id="x3L-1Y-6if"/>
+                        <outlet property="runLongQueryButtonInDatabasePool" destination="kjv-Ru-1td" id="f4n-Dy-AgQ"/>
+                        <outlet property="runLongQueryButtonInDatabaseQueue" destination="Wgi-y2-WUJ" id="w1v-ft-SmO"/>
+                        <outlet property="runLongTransactionButton" destination="DLv-iR-zmY" id="2Ue-nc-vT1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

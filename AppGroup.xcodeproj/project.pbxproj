@@ -15,7 +15,36 @@
 		560709F02390D7A8001A9DE7 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 560709EF2390D7A8001A9DE7 /* GRDB */; };
 		560709F22390D85F001A9DE7 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560709F12390D85F001A9DE7 /* AppDatabase.swift */; };
 		560709F42390D883001A9DE7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560709F32390D883001A9DE7 /* Player.swift */; };
+		562A8AAE23926D0700112145 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562A8AAD23926D0700112145 /* ShareViewController.swift */; };
+		562A8AB123926D0700112145 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 562A8AAF23926D0700112145 /* MainInterface.storyboard */; };
+		562A8AB523926D0700112145 /* AppGroupShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 562A8AAB23926D0700112145 /* AppGroupShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		562A8ABB239271FD00112145 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560709F12390D85F001A9DE7 /* AppDatabase.swift */; };
+		562A8ABE239273AD00112145 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 562A8ABD239273AD00112145 /* GRDB */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		562A8AB323926D0700112145 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 560709CE2390558A001A9DE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 562A8AAA23926D0700112145;
+			remoteInfo = AppGroupShare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		562A8AB623926D0700112145 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				562A8AB523926D0700112145 /* AppGroupShare.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		560709D62390558A001A9DE7 /* AppGroup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppGroup.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +57,11 @@
 		560709ED2390559A001A9DE7 /* AppGroup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppGroup.entitlements; sourceTree = "<group>"; };
 		560709F12390D85F001A9DE7 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		560709F32390D883001A9DE7 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		562A8AAB23926D0700112145 /* AppGroupShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AppGroupShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		562A8AAD23926D0700112145 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		562A8AB023926D0700112145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		562A8AB223926D0700112145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56E4F7E82392789900A611F6 /* AppGroupShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppGroupShare.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +73,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		562A8AA823926D0700112145 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				562A8ABE239273AD00112145 /* GRDB in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -46,7 +88,10 @@
 			isa = PBXGroup;
 			children = (
 				560709D82390558A001A9DE7 /* AppGroup */,
+				562A8AAC23926D0700112145 /* AppGroupShare */,
+				562A8ABA2392719C00112145 /* Shared */,
 				560709D72390558A001A9DE7 /* Products */,
+				562A8ABC239273AD00112145 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				560709D62390558A001A9DE7 /* AppGroup.app */,
+				562A8AAB23926D0700112145 /* AppGroupShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,7 +107,6 @@
 		560709D82390558A001A9DE7 /* AppGroup */ = {
 			isa = PBXGroup;
 			children = (
-				560709F12390D85F001A9DE7 /* AppDatabase.swift */,
 				560709D92390558A001A9DE7 /* AppDelegate.swift */,
 				560709ED2390559A001A9DE7 /* AppGroup.entitlements */,
 				560709E22390558C001A9DE7 /* Assets.xcassets */,
@@ -74,6 +119,32 @@
 			path = AppGroup;
 			sourceTree = "<group>";
 		};
+		562A8AAC23926D0700112145 /* AppGroupShare */ = {
+			isa = PBXGroup;
+			children = (
+				56E4F7E82392789900A611F6 /* AppGroupShare.entitlements */,
+				562A8AAD23926D0700112145 /* ShareViewController.swift */,
+				562A8AAF23926D0700112145 /* MainInterface.storyboard */,
+				562A8AB223926D0700112145 /* Info.plist */,
+			);
+			path = AppGroupShare;
+			sourceTree = "<group>";
+		};
+		562A8ABA2392719C00112145 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				560709F12390D85F001A9DE7 /* AppDatabase.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		562A8ABC239273AD00112145 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -84,10 +155,12 @@
 				560709D22390558A001A9DE7 /* Sources */,
 				560709D32390558A001A9DE7 /* Frameworks */,
 				560709D42390558A001A9DE7 /* Resources */,
+				562A8AB623926D0700112145 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				562A8AB423926D0700112145 /* PBXTargetDependency */,
 			);
 			name = AppGroup;
 			packageProductDependencies = (
@@ -96,6 +169,26 @@
 			productName = AppGroup;
 			productReference = 560709D62390558A001A9DE7 /* AppGroup.app */;
 			productType = "com.apple.product-type.application";
+		};
+		562A8AAA23926D0700112145 /* AppGroupShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 562A8AB923926D0700112145 /* Build configuration list for PBXNativeTarget "AppGroupShare" */;
+			buildPhases = (
+				562A8AA723926D0700112145 /* Sources */,
+				562A8AA823926D0700112145 /* Frameworks */,
+				562A8AA923926D0700112145 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppGroupShare;
+			packageProductDependencies = (
+				562A8ABD239273AD00112145 /* GRDB */,
+			);
+			productName = AppGroupShare;
+			productReference = 562A8AAB23926D0700112145 /* AppGroupShare.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -108,6 +201,9 @@
 				ORGANIZATIONNAME = "Gwendal Roué";
 				TargetAttributes = {
 					560709D52390558A001A9DE7 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					562A8AAA23926D0700112145 = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
 				};
@@ -129,6 +225,7 @@
 			projectRoot = "";
 			targets = (
 				560709D52390558A001A9DE7 /* AppGroup */,
+				562A8AAA23926D0700112145 /* AppGroupShare */,
 			);
 		};
 /* End PBXProject section */
@@ -141,6 +238,14 @@
 				560709E62390558C001A9DE7 /* LaunchScreen.storyboard in Resources */,
 				560709E32390558C001A9DE7 /* Assets.xcassets in Resources */,
 				560709E12390558A001A9DE7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		562A8AA923926D0700112145 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				562A8AB123926D0700112145 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,7 +263,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		562A8AA723926D0700112145 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				562A8ABB239271FD00112145 /* AppDatabase.swift in Sources */,
+				562A8AAE23926D0700112145 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		562A8AB423926D0700112145 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 562A8AAA23926D0700112145 /* AppGroupShare */;
+			targetProxy = 562A8AB323926D0700112145 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		560709DF2390558A001A9DE7 /* Main.storyboard */ = {
@@ -175,6 +297,14 @@
 				560709E52390558C001A9DE7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		562A8AAF23926D0700112145 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				562A8AB023926D0700112145 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -297,6 +427,7 @@
 		560709EB2390558C001A9DE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AppGroup/AppGroup.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -316,6 +447,7 @@
 		560709EC2390558C001A9DE7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AppGroup/AppGroup.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -327,6 +459,46 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.groue.AppGroup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		562A8AB723926D0700112145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AppGroupShare/AppGroupShare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AMD8W895CT;
+				INFOPLIST_FILE = AppGroupShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.groue.AppGroup.AppGroupShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		562A8AB823926D0700112145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AppGroupShare/AppGroupShare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AMD8W895CT;
+				INFOPLIST_FILE = AppGroupShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.groue.AppGroup.AppGroupShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -353,6 +525,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		562A8AB923926D0700112145 /* Build configuration list for PBXNativeTarget "AppGroupShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				562A8AB723926D0700112145 /* Debug */,
+				562A8AB823926D0700112145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -368,6 +549,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		560709EF2390D7A8001A9DE7 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 560709EE2390D7A8001A9DE7 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
+		562A8ABD239273AD00112145 /* GRDB */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 560709EE2390D7A8001A9DE7 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
 			productName = GRDB;

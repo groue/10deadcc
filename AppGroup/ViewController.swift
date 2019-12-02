@@ -3,23 +3,42 @@ import GRDB
 
 class ViewController: UIViewController {
     
-    @IBOutlet private var button: UIButton!
+    @IBOutlet private var runLongTransactionButton: UIButton!
+    @IBOutlet private var runLongQueryButtonInDatabaseQueue: UIButton!
+    @IBOutlet private var runLongQueryButtonInDatabasePool: UIButton!
 
-    @IBAction func runTransaction() {
-        button.isEnabled = false
+    @IBAction func runLongTransaction() {
+        isEnabled = false
         
-        let semaphore = DispatchSemaphore(value: 0)
-        
-        DispatchQueue.global().async {
-            try! dbQueue.inTransaction(.immediate) { _ in
-                semaphore.wait()
-                return .commit
-            }
+        try! AppDatabase.shared.createDatabasePool()
+        AppDatabase.shared.openLongRunningTransaction { result in
+            self.isEnabled = true
         }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(60)) {
-            semaphore.signal()
-            self.button.isEnabled = true
+    }
+    
+    @IBAction func runLongQueryInDatabaseQueue() {
+        isEnabled = false
+
+        try! AppDatabase.shared.createDatabaseQueue()
+        AppDatabase.shared.runLongQuery { result in
+            self.isEnabled = true
+        }
+    }
+    
+    @IBAction func runLongQueryInDatabasePool() {
+        isEnabled = false
+
+        try! AppDatabase.shared.createDatabasePool()
+        AppDatabase.shared.runLongQuery { result in
+            self.isEnabled = true
+        }
+    }
+
+    private var isEnabled = true {
+        didSet {
+            runLongTransactionButton.isEnabled = isEnabled
+            runLongQueryButtonInDatabaseQueue.isEnabled = isEnabled
+            runLongQueryButtonInDatabasePool.isEnabled = isEnabled
         }
     }
 }
